@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyEquities ZAR — Daily Portfolio Review · 28 Sep 2026</title>
+<style>
+  :root {
+    --bg: #0b0e13;
+    --card: #14181f;
+    --card2: #1a2029;
+    --line: #2a3140;
+    --text: #e8edf4;
+    --muted: #8b97a8;
+    --green: #3dd68c;
+    --green-dim: rgba(61,214,140,.18);
+    --amber: #f5b942;
+    --amber-dim: rgba(245,185,66,.16);
+    --red: #ff6b4a;
+    --red-dim: rgba(255,107,74,.16);
+    --orange: #ff8a3d;
+    --grey: #6b7585;
+    --blue: #5aa7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px 12px 48px;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+    background: var(--bg); color: var(--text);
+    font-size: 13px; line-height: 1.4;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; font-weight: 700; letter-spacing: -.02em; }
+  .ts { color: var(--muted); font-size: 12px; margin-bottom: 16px; }
+  .key {
+    display: flex; flex-wrap: wrap; gap: 8px 14px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 18px;
+    font-size: 12px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 99px; display: inline-block; margin-right: 6px; }
+  .table-wrap {
+    overflow-x: auto; border: 1px solid var(--line); border-radius: 10px;
+    margin-bottom: 22px; background: var(--card);
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+  th {
+    position: sticky; top: 0; z-index: 2;
+    background: #10151c; color: var(--muted); font-weight: 600;
+    text-align: left; padding: 9px 8px; font-size: 11px; letter-spacing: .03em;
+    text-transform: uppercase; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  tr.near-add { background: var(--green-dim); }
+  tr.near-trim { background: var(--red-dim); }
+  tr.buy-row { background: var(--green-dim); }
+  .neg { color: var(--red); font-weight: 600; }
+  .pos { color: var(--green); font-weight: 600; }
+  .pill-track {
+    position: relative; height: 14px; border-radius: 99px;
+    background: linear-gradient(90deg, #1e3a2a 0%, #2a3140 50%, #3a2218 100%);
+    border: 1px solid #2e3644; min-width: 110px;
+  }
+  .pill-fill {
+    position: absolute; top: 0; bottom: 0; left: 0;
+    border-radius: 99px; opacity: .85;
+  }
+  .pill-mark {
+    position: absolute; top: -3px; width: 4px; height: 20px;
+    background: #fff; border-radius: 2px;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.45);
+    transform: translateX(-50%);
+  }
+  .status {
+    display: inline-block; padding: 2px 7px; border-radius: 99px;
+    font-size: 11px; font-weight: 650; white-space: nowrap;
+  }
+  .s-hold { background: #2a3140; color: #c5ced8; }
+  .s-watch { background: var(--amber-dim); color: var(--amber); }
+  .s-buy { background: var(--green-dim); color: var(--green); }
+  .s-near { background: var(--amber-dim); color: var(--amber); }
+  .s-avoid { background: var(--red-dim); color: var(--red); }
+  .s-caution { background: var(--amber-dim); color: var(--amber); }
+  h2 { font-size: 16px; margin: 22px 0 10px; }
+  .notes { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 13px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 13px; color: #fff; }
+  .card p { margin: 0; color: var(--muted); font-size: 12.5px; }
+  .rev, .sum {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; margin-top: 14px;
+  }
+  .rev h3, .sum h3 { margin: 0 0 8px; font-size: 14px; }
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .mono { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .small { color: var(--muted); font-size: 11px; }
+  @media (max-width: 700px) {
+    body { font-size: 12px; }
+    table { min-width: 980px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>EasyEquities ZAR — Daily Portfolio Review</h1>
+  <div class="ts">Monday 28 September 2026 · 11:26 SAST · Baseline values locked · Live research overlay only</div>
+
+  <div class="key">
+    <span><i class="dot" style="background:var(--green)"></i>Green = Buy Zone / positive action</span>
+    <span><i class="dot" style="background:var(--amber)"></i>Amber = Near / caution</span>
+    <span><i class="dot" style="background:var(--red)"></i>Red/Orange = Sell / Trim zone</span>
+    <span><i class="dot" style="background:var(--grey)"></i>Grey = Hold / No change</span>
+  </div>
+
+  <h2>Table 1 — Active Holdings</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Share</th>
+          <th>Total Invested</th>
+          <th>Shares</th>
+          <th>Avg Entry</th>
+          <th>Current Price</th>
+          <th>Current Value</th>
+          <th>P/L</th>
+          <th>Suggested Add (Price/%/Amount)</th>
+          <th>Price Position (Pill)</th>
+          <th>Suggested Trim/Exit (Price/%/Amount)</th>
+          <th>Status</th>
+          <th>Action Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Capitec (CPI)</td>
+          <td class="mono">R19,900</td>
+          <td class="mono">~4.3</td>
+          <td class="mono">~R4,630</td>
+          <td class="mono">~R4,494</td>
+          <td class="mono">R19,343</td>
+          <td class="neg">–2.8%</td>
+          <td>R3,900–4,100 (–10 to –15%)<br><span class="small">R3,000–4,000</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:72%;background:linear-gradient(90deg,#3dd68c,#f5b942 70%,#ff6b4a);"></div>
+              <div class="pill-mark" style="left:72%;"></div>
+            </div>
+            <div class="small">Add 4000 ← now 4494 → trim hold-core</div>
+          </td>
+          <td>Hold core; trim only if &gt;15–20% of portfolio<br><span class="small">Trim 20–30%</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold. Interim results due ~30 Sep. No add.</td>
+        </tr>
+        <tr>
+          <td>Harmony (HAR)</td>
+          <td class="mono">R119,200</td>
+          <td class="mono">~370</td>
+          <td class="mono">~R322</td>
+          <td class="mono">~R306</td>
+          <td class="mono">R113,155</td>
+          <td class="neg">–5.1%</td>
+          <td>R245–260 (–15 to –20%)<br><span class="small">R15,000–20,000</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:32%;background:linear-gradient(90deg,#3dd68c,#6b7585);"></div>
+              <div class="pill-mark" style="left:32%;"></div>
+            </div>
+            <div class="small">Add 252 ← now 306 → trim 425</div>
+          </td>
+          <td>R400–450+<br><span class="small">Trim 25–30%</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold. Gold pullback; convertible bond priced. Wait for R245–260.</td>
+        </tr>
+        <tr>
+          <td>New Wave Silver ETN</td>
+          <td class="mono">R20,430</td>
+          <td class="mono">~15.5*</td>
+          <td class="mono">~R1,320*</td>
+          <td class="mono">~R1,000*</td>
+          <td class="mono">R15,484</td>
+          <td class="neg">–24.2%</td>
+          <td>Only if you want more silver exposure<br><span class="small">Small (R2,000–3,000 max)</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:22%;background:#3dd68c;"></div>
+              <div class="pill-mark" style="left:22%;"></div>
+            </div>
+            <div class="small">Cost 1320 · now ~1000 · silver −5% 24h</div>
+          </td>
+          <td>Any strong silver rally that recovers cost or better<br><span class="small">50–100%</span></td>
+          <td><span class="status s-caution">Hold / satellite</span></td>
+          <td>Do not add into silver dump. Satellite only.</td>
+        </tr>
+        <tr>
+          <td>Pan African (PAN)</td>
+          <td class="mono">R19,880</td>
+          <td class="mono">~691</td>
+          <td class="mono">~R28.80</td>
+          <td class="mono">~R27.70</td>
+          <td class="mono">R19,142</td>
+          <td class="neg">–3.7%</td>
+          <td>R23.50–24.50 (–15%)<br><span class="small">R3,000–4,000</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:26%;background:linear-gradient(90deg,#3dd68c,#6b7585);"></div>
+              <div class="pill-mark" style="left:26%;"></div>
+            </div>
+            <div class="small">Add 24 ← now 27.70 → trim 40</div>
+          </td>
+          <td>R38–42+<br><span class="small">Trim 20–30%</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold. FY results already out (record output + dividend + buyback). Wait for add zone.</td>
+        </tr>
+        <tr>
+          <td>Pick n Pay (PIK)</td>
+          <td class="mono">R79,525</td>
+          <td class="mono">~3,534</td>
+          <td class="mono">~R22.50</td>
+          <td class="mono">~R19.70</td>
+          <td class="mono">R69,584</td>
+          <td class="neg">–12.5%</td>
+          <td>Only if clear turnaround acceleration<br><span class="small">Avoid or very small</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:18%;background:#ff8a3d;"></div>
+              <div class="pill-mark" style="left:18%;"></div>
+            </div>
+            <div class="small">No clean add · now 19.70 · trim/exit 25–28</div>
+          </td>
+          <td>R25–28+ or on further deterioration<br><span class="small">Prefer reduce/exit 50–100% if turnaround stalls</span></td>
+          <td><span class="status s-caution">Caution</span></td>
+          <td>No add. CEO-designate appointed 22 Sep. Still loss-making. Watch, don’t average.</td>
+        </tr>
+        <tr>
+          <td>Prosus (PRX)</td>
+          <td class="mono">R249,000</td>
+          <td class="mono">~249</td>
+          <td class="mono">~R1,000</td>
+          <td class="mono">~R670</td>
+          <td class="mono">R166,745</td>
+          <td class="neg">–33.0%</td>
+          <td>R550–580 (–15 to –20%)<br><span class="small">Limited (position already large)</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:29%;background:#3dd68c;"></div>
+              <div class="pill-mark" style="left:29%;"></div>
+            </div>
+            <div class="small">Add 565 ← now 670 → trim 950</div>
+          </td>
+          <td>R900–1,000+ (discount closes)<br><span class="small">Trim 15–25%</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold oversized core. Buybacks ongoing. Add only R550–580.</td>
+        </tr>
+        <tr>
+          <td>Purple Group (PPE)</td>
+          <td class="mono">R248,500</td>
+          <td class="mono">~110,938</td>
+          <td class="mono">~R2.24</td>
+          <td class="mono">~R1.91</td>
+          <td class="mono">R211,945</td>
+          <td class="neg">–14.7%</td>
+          <td>R1.55–1.65 (–15 to –20%)<br><span class="small">Modest (R10,000–15,000 max)</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:26%;background:#3dd68c;"></div>
+              <div class="pill-mark" style="left:26%;"></div>
+            </div>
+            <div class="small">Add 1.60 ← now 1.91 → trim 3.00</div>
+          </td>
+          <td>R2.80–3.20+<br><span class="small">Trim into strength if valuation stretches</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold. Already largest name. Live ~R1.87 — closer to add, still not in zone.</td>
+        </tr>
+        <tr>
+          <td>Sibanye Stillwater (SSW)</td>
+          <td class="mono">R148,980</td>
+          <td class="mono">~2,547</td>
+          <td class="mono">~R58.50</td>
+          <td class="mono">~R43.30</td>
+          <td class="mono">R110,269</td>
+          <td class="neg">–26.0%</td>
+          <td>R35–37 (–15 to –20%)<br><span class="small">R10,000–15,000</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:28%;background:#3dd68c;"></div>
+              <div class="pill-mark" style="left:28%;"></div>
+            </div>
+            <div class="small">Add 36 ← now 43.30 → trim 65</div>
+          </td>
+          <td>R60–70+<br><span class="small">Trim 25–40%</span></td>
+          <td><span class="status s-hold">Hold</span></td>
+          <td>Hold. PGM/gold complex weak today. Do not chase. Add only R35–37.</td>
+        </tr>
+        <tr>
+          <td>Woolworths (WHL)</td>
+          <td class="mono">R39,740</td>
+          <td class="mono">~833</td>
+          <td class="mono">~R47.70</td>
+          <td class="mono">~R37.15</td>
+          <td class="mono">R30,956</td>
+          <td class="neg">–22.1%</td>
+          <td>Only if food remains strong &amp; fashion stabilises<br><span class="small">Avoid or small</span></td>
+          <td>
+            <div class="pill-track">
+              <div class="pill-fill" style="width:16%;background:#ff8a3d;"></div>
+              <div class="pill-mark" style="left:16%;"></div>
+            </div>
+            <div class="small">No clean add · now 37.15 · trim 48–55</div>
+          </td>
+          <td>R48–55+ or on further drag<br><span class="small">Prefer reduce/exit if Australian/fashion problems persist</span></td>
+          <td><span class="status s-caution">Caution</span></td>
+          <td>No add. FY results 2 Sep; AU/fashion still the drag. Live ~R36.4–36.7.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Table 2 — Watchlist</h2>
+  <div class="table-wrap">
+    <table style="min-width:960px">
+      <thead>
+        <tr>
+          <th>Share</th>
+          <th>Current Price</th>
+          <th>Buy Zone?</th>
+          <th>Suggested Buy Price</th>
+          <th>Target Exit / Sell</th>
+          <th>Hold Until</th>
+          <th>Status</th>
+          <th>Action Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Thungela (TGA)</td>
+          <td class="mono">~R115</td>
+          <td>No</td>
+          <td>~R95–105</td>
+          <td>R140–160 on coal spike / specials</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Coal name volatile; recent session weakness. Not a buy today.</td>
+        </tr>
+        <tr>
+          <td>Naspers (NPN)</td>
+          <td class="mono">~R715–723</td>
+          <td>No</td>
+          <td>~R620–650</td>
+          <td>Hold long-term (Tencent / buybacks)</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Buybacks + Claim It campaign. Prefer PRX already held.</td>
+        </tr>
+        <tr>
+          <td>Sasol (SOL)</td>
+          <td class="mono">~R233</td>
+          <td>No</td>
+          <td>~R180–200</td>
+          <td>R280–320 if chemicals/oil hold</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Board change SENS; oil bid higher today. Still cyclical. Skip.</td>
+        </tr>
+        <tr>
+          <td>Discovery (DSY)</td>
+          <td class="mono">~R262</td>
+          <td>No</td>
+          <td>~R220–235</td>
+          <td>Hold long-term</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. FY results already out (Jun-26 year). Quality, not cheap enough.</td>
+        </tr>
+        <tr>
+          <td>Richemont (CFR)</td>
+          <td class="mono">~R3,375</td>
+          <td>No</td>
+          <td>~R2,900–3,050</td>
+          <td>Hold long-term</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Co-deputy chair appointment. Luxury still expensive. Skip.</td>
+        </tr>
+        <tr>
+          <td>City Lodge (CLH)</td>
+          <td class="mono">~R4.50</td>
+          <td>Near</td>
+          <td>~R4.00–4.30</td>
+          <td>R6.00–6.50</td>
+          <td>FY27 occupancy data</td>
+          <td><span class="status s-near">Near Buy</span></td>
+          <td>Watch. Thin name. Only a starter if it tags R4.20.</td>
+        </tr>
+        <tr>
+          <td>We Buy Cars (WBC)</td>
+          <td class="mono">~R28</td>
+          <td>No</td>
+          <td>~R22–24</td>
+          <td>R36–40</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Used-car cycle still soft. Skip.</td>
+        </tr>
+        <tr>
+          <td>Boxer Retail (BOX)</td>
+          <td class="mono">~R82</td>
+          <td>No</td>
+          <td>~R68–72</td>
+          <td>Hold long-term / R95–100</td>
+          <td>Indefinite</td>
+          <td><span class="status s-watch">Watch</span></td>
+          <td>Watch. Better business than PIK, priced as such. Interim ~13 Oct. Skip today.</td>
+        </tr>
+        <tr>
+          <td>ArcelorMittal SA (ACL)</td>
+          <td class="mono">~R1.36–1.41</td>
+          <td>No</td>
+          <td>Only as a speculative ticket &lt;R1.10</td>
+          <td>Trade, not hold long-term</td>
+          <td>—</td>
+          <td><span class="status s-avoid">Avoid</span></td>
+          <td>Skip. Structural SA steel risk. Not a portfolio buy.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Fresh Research Notes (24–48h)</h2>
+  <div class="notes">
+    <div class="card">
+      <h3>Capitec (CPI)</h3>
+      <p>Trading statement (10 Sep) guided H1 HEPS +18–20%. Full interim due on/about 30 Sep 2026. Live price ~R4,468–4,488, still well above the R3,900–4,100 add band. No change.</p>
+    </div>
+    <div class="card">
+      <h3>Harmony (HAR)</h3>
+      <p>Priced a US$500m guaranteed senior unsecured convertible bond (21–22 Sep). Two recent fatalities (Moab Khotsong, Mponeng). Gold USD ~$4,146 (−3.2% today); precious-metals index −8%. Live ~R287–310 vs locked ~R306. Add zone untouched.</p>
+    </div>
+    <div class="card">
+      <h3>New Wave Silver ETN</h3>
+      <p>Silver spot ~$61 (−5% on the session). NEWSLV last prints clustered ~R9.5–R10.3 depending on quote convention; baseline ~R1,000* kept. Do not add into the dump.</p>
+    </div>
+    <div class="card">
+      <h3>Pan African (PAN)</h3>
+      <p>FY26 SENS: record annual gold production, record cash dividend proposed, share buy-back and board changes. Live quotes ~R25.5–R26.5 on the gold slide — closer to, but not inside, R23.50–24.50. Hold.</p>
+    </div>
+    <div class="card">
+      <h3>Pick n Pay (PIK)</h3>
+      <p>CEO-designate appointed 22 Sep. Still loss-making (FY26 HEPS −52.6c). Analysts net Sell; target ~R20.50. Live ~R19.04–19.12. Turnaround not “accelerating” enough to justify an add.</p>
+    </div>
+    <div class="card">
+      <h3>Prosus (PRX)</h3>
+      <p>Repurchase programme update on SENS. Live ~R670–676, essentially flat vs locked ~R670. Tencent tape constructive but position is already the second-largest holding. Add only R550–580.</p>
+    </div>
+    <div class="card">
+      <h3>Purple Group (PPE)</h3>
+      <p>No fresh 48h SENS. Last print R1.87 (unchanged Fri). Telescope AI deal still the July story. FY results expected mid-Nov. Position already very large — wait for R1.55–1.65.</p>
+    </div>
+    <div class="card">
+      <h3>Sibanye Stillwater (SSW)</h3>
+      <p>PGM complex heavy with gold. Live prints R40.8–R43.5 vs locked R43.30. High volume. Add band R35–37 still ~15% away. Hold the core.</p>
+    </div>
+    <div class="card">
+      <h3>Woolworths (WHL)</h3>
+      <p>FY26 results 2 Sep; dividend went ex 22 Sep. Food resilient, AU/fashion still the problem. Live ~R36.4–36.7, a touch under locked R37.15. No add.</p>
+    </div>
+  </div>
+
+  <div class="rev">
+    <h3>Revised Values</h3>
+    <p>No change. All baseline prices, values, P/L, add and trim bands locked.</p>
+    <h3 style="margin-top:12px">Revised Strategy Notes</h3>
+    <p>No change — gold/PGM/silver weakness is a watch item, not a signal to break add discipline or to trim early.</p>
+  </div>
+
+  <div class="sum">
+    <h3>Daily Summary</h3>
+    <ul>
+      <li>Material revisions: none.</li>
+      <li>Market tape: JSE All Share / Top 40 lower; precious-metals index −8% as gold/silver/platinum sold off. Financials and Tencent-proxies firmer.</li>
+      <li>Watchlist Buy triggers today: none. City Lodge is the only name marked Near Buy (not a trigger).</li>
+      <li>Calendar: Capitec interim ~30 Sep; Boxer interim ~13 Oct; Purple FY ~13 Nov.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
