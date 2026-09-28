@@ -56,8 +56,12 @@
     .dot.red { background: var(--red); }
     .dot.grey { background: var(--grey); }
 
-    .day-report { display: none; max-width: 1200px; margin: 0 auto; }
-    .day-report.active { display: block; }
+    #report-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 400px;
+    }
+    .loading { color: var(--muted); padding: 40px 0; text-align: center; }
   </style>
 </head>
 <body>
@@ -66,9 +70,10 @@
   <h1>EasyEquities Daily Portfolio</h1>
   <div>
     <label for="dateSelect">Date: </label>
-    <select id="dateSelect" onchange="showDay(this.value)">
+    <select id="dateSelect" onchange="loadReport(this.value)">
+      <!-- Newest dates at the top -->
       <option value="2026-09-29" selected>2026-09-29 (Mon)</option>
-      <!-- Add newer dates above this line -->
+      <!-- Add new dates here -->
     </select>
   </div>
   <div class="key">
@@ -79,18 +84,27 @@
   </div>
 </header>
 
-<!-- ========== DAILY REPORTS ========== -->
-
-<div id="2026-09-29" class="day-report active">
-  <p style="color:#a0a0a0">Monday 29 Sep 2026 report will appear here once you paste the first daily output from Grok.</p>
+<div id="report-container">
+  <div class="loading">Loading report…</div>
 </div>
 
 <script>
-  function showDay(id) {
-    document.querySelectorAll('.day-report').forEach(el => el.classList.remove('active'));
-    const el = document.getElementById(id);
-    if (el) el.classList.add('active');
+  async function loadReport(date) {
+    const container = document.getElementById('report-container');
+    container.innerHTML = '<div class="loading">Loading report…</div>';
+
+    try {
+      const response = await fetch(`reports/${date}.html`);
+      if (!response.ok) throw new Error('Report not found');
+      const html = await response.text();
+      container.innerHTML = html;
+    } catch (err) {
+      container.innerHTML = `<div class="loading">No report found for ${date}</div>`;
+    }
   }
+
+  // Load the selected date when the page opens
+  loadReport(document.getElementById('dateSelect').value);
 </script>
 
 </body>
