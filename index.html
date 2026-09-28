@@ -12,6 +12,43 @@
       margin: 0;
       padding: 20px;
     }
+    #login-screen {
+      max-width: 360px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    #login-screen input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+    }
+    #login-screen button {
+      width: 100%;
+      padding: 12px;
+      background: #22c55e;
+      border: none;
+      border-radius: 6px;
+      color: black;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #login-screen button:hover {
+      background: #16a34a;
+    }
+    .error-msg {
+      color: #ef4444;
+      margin-top: 10px;
+      display: none;
+    }
+    #main-content {
+      display: none;
+    }
     header {
       max-width: 1100px;
       margin: 0 auto 30px;
@@ -62,29 +99,73 @@
 </head>
 <body>
 
-  <header>
-    <h1>EasyEquities Daily Portfolio</h1>
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <h2>EasyEquities Portfolio</h2>
+    <p style="color:#aaa">Enter password to continue</p>
+    <input type="password" id="password" placeholder="Password" autofocus>
+    <button onclick="checkPassword()">Unlock</button>
+    <div class="error-msg" id="error-msg">Incorrect password</div>
+  </div>
 
-    <div>
-      <label for="dateSelect">Date: </label>
-      <select id="dateSelect">
-        <option>Loading...</option>
-      </select>
+  <!-- MAIN CONTENT (hidden until password is correct) -->
+  <div id="main-content">
+    <header>
+      <h1>EasyEquities Daily Portfolio</h1>
+      <div>
+        <label for="dateSelect">Date: </label>
+        <select id="dateSelect">
+          <option>Loading...</option>
+        </select>
+      </div>
+      <div class="key">
+        <span><span class="dot green"></span>Buy Zone</span>
+        <span><span class="dot amber"></span>Near</span>
+        <span><span class="dot red"></span>Sell / Trim</span>
+        <span><span class="dot grey"></span>Hold</span>
+      </div>
+    </header>
+
+    <div id="report-container">
+      <div class="message">Loading...</div>
     </div>
-
-    <div class="key">
-      <span><span class="dot green"></span>Buy Zone</span>
-      <span><span class="dot amber"></span>Near</span>
-      <span><span class="dot red"></span>Sell / Trim</span>
-      <span><span class="dot grey"></span>Hold</span>
-    </div>
-  </header>
-
-  <div id="report-container">
-    <div class="message">Loading...</div>
   </div>
 
   <script>
+    // ========== CHANGE YOUR PASSWORD HERE ==========
+    const CORRECT_PASSWORD = "Ng2405@Gh2026";
+    // ===============================================
+
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      const errorMsg = document.getElementById('error-msg');
+
+      if (input === CORRECT_PASSWORD) {
+        // Save login for this browser session
+        sessionStorage.setItem('portfolioAuth', 'true');
+        showMainContent();
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }
+
+    function showMainContent() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      start(); // load the reports
+    }
+
+    // Check if already logged in this session
+    if (sessionStorage.getItem('portfolioAuth') === 'true') {
+      showMainContent();
+    }
+
+    // Allow pressing Enter
+    document.getElementById('password').addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    // ========== Original report loading code ==========
     async function start() {
       const select = document.getElementById('dateSelect');
       const container = document.getElementById('report-container');
@@ -94,7 +175,6 @@
         const dates = await response.json();
 
         dates.sort((a, b) => b.localeCompare(a));
-
         select.innerHTML = '';
 
         const now = new Date();
@@ -139,8 +219,6 @@
         container.innerHTML = '<div class="message">No report found for ' + date + '</div>';
       }
     }
-
-    start();
   </script>
 
 </body>
