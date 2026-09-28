@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyEquities Daily Portfolio Archive</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --card: #1a1a1a;
+      --text: #e5e5e5;
+      --muted: #a0a0a0;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --grey: #6b7280;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 16px;
+      line-height: 1.5;
+    }
+    header {
+      max-width: 1200px;
+      margin: 0 auto 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h1 { font-size: 1.4rem; margin: 0; }
+    select {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid #333;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .key {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .key span { display: flex; align-items: center; gap: 4px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.green { background: var(--green); }
+    .dot.amber { background: var(--amber); }
+    .dot.red { background: var(--red); }
+    .dot.grey { background: var(--grey); }
+
+    .day-report { display: none; max-width: 1200px; margin: 0 auto; }
+    .day-report.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>EasyEquities Daily Portfolio</h1>
+  <div>
+    <label for="dateSelect">Date: </label>
+    <select id="dateSelect" onchange="showDay(this.value)">
+      <option value="2026-09-29" selected>2026-09-29 (Mon)</option>
+      <!-- Add newer dates above this line -->
+    </select>
+  </div>
+  <div class="key">
+    <span><i class="dot green"></i> Buy Zone</span>
+    <span><i class="dot amber"></i> Near / Caution</span>
+    <span><i class="dot red"></i> Sell / Trim</span>
+    <span><i class="dot grey"></i> Hold / No change</span>
+  </div>
+</header>
+
+<!-- ========== DAILY REPORTS ========== -->
+
+<div id="2026-09-29" class="day-report active">
+  <p style="color:#a0a0a0">Monday 29 Sep 2026 report will appear here once you paste the first daily output from Grok.</p>
+</div>
+
+<script>
+  function showDay(id) {
+    document.querySelectorAll('.day-report').forEach(el => el.classList.remove('active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
