@@ -1,73 +1,147 @@
-<script>
-  async function init() {
-    const container = document.getElementById('report-container');
-    const select = document.getElementById('dateSelect');
-
-    try {
-      const res = await fetch('dates.json');
-      if (!res.ok) throw new Error('Could not load dates.json');
-
-      let dates = await res.json();
-
-      // Sort newest first
-      dates.sort((a, b) => b.localeCompare(a));
-
-      // Clear the select
-      select.innerHTML = '';
-
-      // Get today's date in local time (YYYY-MM-DD)
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
-      const todayStr = `${year}-${month}-${day}`;
-
-      let defaultDate = dates[0] || null;
-
-      dates.forEach(date => {
-        const option = document.createElement('option');
-        option.value = date;
-        option.textContent = date;
-
-        if (date === todayStr) {
-          option.selected = true;
-          defaultDate = date;
-        }
-
-        select.appendChild(option);
-      });
-
-      // If today is not in the list, select the newest available date
-      if (defaultDate && defaultDate !== todayStr) {
-        select.value = defaultDate;
-      }
-
-      if (defaultDate) {
-        loadReport(defaultDate);
-      } else {
-        container.innerHTML = '<div class="error">No dates found in dates.json</div>';
-      }
-
-    } catch (err) {
-      console.error(err);
-      container.innerHTML = `<div class="error">Error loading dates: ${err.message}</div>`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyEquities Daily Portfolio</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f0f0f;
+      color: #e5e5e5;
+      margin: 0;
+      padding: 20px;
     }
-  }
-
-  async function loadReport(date) {
-    const container = document.getElementById('report-container');
-    container.innerHTML = '<div class="loading">Loading report…</div>';
-
-    try {
-      const response = await fetch(`reports/${date}.html`);
-      if (!response.ok) throw new Error('Report not found');
-      const html = await response.text();
-      container.innerHTML = html;
-    } catch (err) {
-      container.innerHTML = `<div class="error">No report found for ${date}</div>`;
+    header {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
     }
-  }
+    h1 { margin: 0; font-size: 1.4rem; }
+    select {
+      background: #1a1a1a;
+      color: white;
+      border: 1px solid #444;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    .key {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      color: #aaa;
+      flex-wrap: wrap;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+    .green { background: #22c55e; }
+    .amber { background: #f59e0b; }
+    .red { background: #ef4444; }
+    .grey { background: #6b7280; }
+    #report-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 300px;
+    }
+    .message {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
 
-  // Start
-  init();
-</script>
+  <header>
+    <h1>EasyEquities Daily Portfolio</h1>
+
+    <div>
+      <label for="dateSelect">Date: </label>
+      <select id="dateSelect">
+        <option>Loading...</option>
+      </select>
+    </div>
+
+    <div class="key">
+      <span><span class="dot green"></span>Buy Zone</span>
+      <span><span class="dot amber"></span>Near</span>
+      <span><span class="dot red"></span>Sell / Trim</span>
+      <span><span class="dot grey"></span>Hold</span>
+    </div>
+  </header>
+
+  <div id="report-container">
+    <div class="message">Loading...</div>
+  </div>
+
+  <script>
+    async function start() {
+      const select = document.getElementById('dateSelect');
+      const container = document.getElementById('report-container');
+
+      try {
+        const response = await fetch('dates.json');
+        const dates = await response.json();
+
+        dates.sort((a, b) => b.localeCompare(a));
+
+        select.innerHTML = '';
+
+        const now = new Date();
+        const today = now.getFullYear() + '-' +
+                      String(now.getMonth() + 1).padStart(2, '0') + '-' +
+                      String(now.getDate()).padStart(2, '0');
+
+        let selectedDate = dates[0];
+
+        dates.forEach(function(date) {
+          const opt = document.createElement('option');
+          opt.value = date;
+          opt.textContent = date;
+          if (date === today) {
+            opt.selected = true;
+            selectedDate = date;
+          }
+          select.appendChild(opt);
+        });
+
+        loadReport(selectedDate);
+
+        select.addEventListener('change', function() {
+          loadReport(this.value);
+        });
+
+      } catch (error) {
+        container.innerHTML = '<div class="message">Error loading dates.json<br><small>' + error.message + '</small></div>';
+      }
+    }
+
+    async function loadReport(date) {
+      const container = document.getElementById('report-container');
+      container.innerHTML = '<div class="message">Loading report for ' + date + '...</div>';
+
+      try {
+        const res = await fetch('reports/' + date + '.html');
+        if (!res.ok) throw new Error('File not found');
+        const html = await res.text();
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = '<div class="message">No report found for ' + date + '</div>';
+      }
+    }
+
+    start();
+  </script>
+
+</body>
+</html>
