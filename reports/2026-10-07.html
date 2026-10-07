@@ -3,459 +3,217 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EasyEquities ZAR Daily Review — date n/a (no verified SAST clock)</title>
+<title>EasyEquities ZAR Daily Review — 7 Oct 2026</title>
 <style>
+:root{--bg:#0d1117;--card:#161b22;--tx:#e6edf3;--mu:#8b949e;--g:#3fb950;--a:#d29922;--r:#f85149;--ln:#30363d}
 *{box-sizing:border-box}
-body{margin:0;background:#0d1117;color:#e6edf3;font:12.5px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1280px;margin:0 auto;padding:14px 14px 30px}
-h1{font-size:17px;margin:0 0 4px;letter-spacing:.2px}
-h1 .v{font-size:11px;color:#8b949e;font-weight:400;border:1px solid #30363d;border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:2px}
-.sub{color:#8b949e;font-size:11.5px;margin:0 0 10px}
-.banner{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.5);color:#d29922;border-radius:8px;padding:8px 11px;font-size:12px;margin:10px 0 12px}
-.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 12px;margin:12px 0}
-.card h2{font-size:12.5px;margin:0 0 8px;letter-spacing:.4px;text-transform:uppercase}
-.card h2 .muted{text-transform:none;letter-spacing:0;font-weight:400}
-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px}
-th{position:sticky;top:0;background:#161b22;color:#8b949e;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;text-align:left;padding:6px 7px;border-bottom:1px solid #30363d;z-index:3}
-td{padding:6px 7px;border-bottom:1px solid #21262d;vertical-align:middle;text-align:left}
-tbody tr:last-child td{border-bottom:none}
-.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-.muted{color:#8b949e}
-.g{color:#3fb950}.a{color:#d29922}.r{color:#f85149}
-.chip{display:inline-block;padding:1px 8px;border-radius:999px;font-size:10.5px;border:1px solid #30363d;color:#8b949e;background:rgba(139,148,158,.10);white-space:nowrap}
-.chip.build{color:#3fb950;border-color:rgba(63,185,80,.5);background:rgba(63,185,80,.12)}
-.chip.watch,.chip.trim{color:#d29922;border-color:rgba(210,153,34,.5);background:rgba(210,153,34,.12)}
-.chip.exit{color:#f85149;border-color:rgba(248,81,73,.5);background:rgba(248,81,73,.12)}
-.chip.hold{color:#8b949e}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.cashstrip{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 12px;margin:0 0 12px}
-.pillbar{width:110px;height:10px;border-radius:5px;background:linear-gradient(90deg,#2ea043,#3fb950 22%,#d29922 50%,#f85149 80%,#da3633);position:relative;margin:2px auto 1px}
-.marker{position:absolute;top:-3px;width:4px;height:16px;border-radius:2px;background:#fff;left:50%;transform:translateX(-50%);box-shadow:0 0 0 1px #0d1117}
-.marker.na{width:5px;background:transparent;border:1.5px dashed #e6edf3}
-.pillnote{text-align:center;font-size:9.5px;color:#8b949e}
-tr.boldrow td{font-weight:700}
-tr.hl td{background:rgba(63,185,80,.08)}
-tr.total td{border-top:1px solid #30363d;background:rgba(139,148,158,.06);font-weight:700}
-.notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px;margin-top:8px}
-.note{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px}
-.note h3{margin:0 0 5px;font-size:12.5px;display:flex;justify-content:space-between;align-items:center;gap:6px}
-.note p{margin:3px 0;font-size:11.5px;color:#c9d1d9}
-.lbl{color:#8b949e}
-.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
-.foot .card{margin:0}
-.foot ul{margin:4px 0 0 16px;padding:0}
-.foot li{margin:3px 0}
-.fineprint{color:#8b949e;font-size:11px;margin:7px 0 0}
+body{margin:0;background:var(--bg);color:var(--tx);font:13px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial}
+.wrap{max-width:1280px;margin:0 auto;padding:14px 16px 28px}
+h1{font-size:18px;margin:0 0 4px}
+h2{font-size:14px;margin:18px 0 8px;border-bottom:1px solid var(--ln);padding-bottom:4px}
+.sub{color:var(--mu);font-size:12px;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
+.chip{font-size:11px;padding:3px 8px;border-radius:99px;border:1px solid var(--ln);background:var(--card)}
+.g{color:var(--g)}.a{color:var(--a)}.r{color:var(--r)}.mu{color:var(--mu)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--ln);margin:0 0 8px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}
+th{position:sticky;top:0;background:#1c2128;z-index:2;font-size:11px;color:var(--mu);font-weight:600}
+.num{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
+.wrapcell{min-width:140px}
+.lg td{background:#132117}
+.lr td{background:#2a1518}
+.hl td{background:#1c2412}
+.pill{width:110px;height:14px;border-radius:7px;background:linear-gradient(90deg,#1f6b32 0%,#3fb950 22%,#d29922 50%,#f85149 100%);position:relative;border:1px solid #000}
+.mk{position:absolute;top:-2px;width:3px;height:18px;background:#fff;border-radius:1px}
+.st{font-size:11px;font-weight:700;padding:2px 6px;border-radius:99px;display:inline-block}
+.b{background:#13301c;color:var(--g)}.h{background:#21262d;color:#c9d1d9}.w{background:#2e2410;color:var(--a)}.t{background:#2e2410;color:var(--a)}.e{background:#3d1418;color:var(--r)}
+.ok{color:var(--g);font-weight:700}.wa{color:var(--a);font-weight:700}.br{color:var(--r);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:8px;padding:8px 10px}
+.card h3{margin:0 0 4px;font-size:13px}
+.card p{margin:0;color:var(--mu);font-size:12px}
+.foot{background:var(--card);border:1px solid var(--ln);border-radius:8px;padding:10px 12px;margin-top:10px}
+.foot p{margin:6px 0}
+@media(max-width:899px){.wrap{padding:8px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-<h1>EasyEquities ZAR Daily Review — date n/a <span class="v">v3d</span></h1>
-<p class="sub">Run: SAST — timestamp n/a (no verified clock in this environment) · Prices last close: n/a — no verified JSE close available (JSE closed overnight) · DATA Shares/Avg/CASH treated as truth · dividends not reinvested — counts never adjusted.</p>
-
-<div class="banner"><b>Rule-2 no-feed run:</b> no verified JSE close was available, and per Rule 2 no prices are invented. Suppressed this run: Price / Value / P/L / Wt% / day%, zone row-tints, pill markers, weight-based cap verdicts, and gap-based tranche sizes (PRX, PPE, SSW). Share-count-based tranches (WHL, PIK) remain sized and placeable as resting limits. Supply verified closes (ticker | close | day%) and every computed field reactivates.</div>
-
+<h1>EasyEquities ZAR Daily Review — 7 Oct 2026</h1>
+<p class="sub">08:32 SAST. Prices last close Tue 6 Oct 2026 (JSE closed overnight). DATA shares/avg/cash unchanged. SSW+PIK T1 done 2 Oct — not re-applied.</p>
 <div class="chips">
-<span class="chip build">Build</span>
-<span class="chip hold">Hold</span>
-<span class="chip watch">Watch</span>
-<span class="chip trim">Trim</span>
-<span class="chip exit">Exit</span>
-<span class="chip">row tint green = close in/just above add zone — inactive (no close)</span>
-<span class="chip">row tint red = trim tranche live at close — inactive (no close)</span>
-<span class="chip">pill: left = add (green) → right = trim (red) · white marker = last close — unset</span>
+<span class="chip"><span class="g">Build</span> green</span>
+<span class="chip">Hold grey</span>
+<span class="chip"><span class="a">Trim / Watch</span> amber</span>
+<span class="chip"><span class="r">Exit</span> red</span>
+<span class="chip">Row green = close in/just above add zone</span>
+<span class="chip">Row red = trim tranche live at close</span>
+<span class="chip">Pill: add ← marker (close) → trim</span>
 </div>
 
-<div class="cashstrip">
-<span><span class="lbl">Cash</span> <b>R67,537</b></span>
-<span><span class="lbl">Equities (cost)</span> <b>R886,686</b></span>
-<span><span class="lbl">Total (cost)</span> <b>R954,223</b></span>
-<span><span class="lbl">Market P/L</span> <b class="muted">n/a</b></span>
-<span class="muted">cost-basis cash ≈7.1% — not the official Wt%</span>
-</div>
-
-<div class="card">
-<h2>T1 · Holdings <span class="muted">— all 9, DATA order · price-dependent cells n/a per Rule 2</span></h2>
+<h2>T1 Holdings</h2>
 <table>
 <thead><tr>
 <th>Share</th><th>Invested</th><th>Shares</th><th>Avg</th><th>Price</th><th>Value</th><th>P/L</th><th>Suggested Add</th><th>Pill</th><th>Suggested Trim/Exit</th><th>Status</th><th>Action</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>CPI</td><td class="num">R19,909</td><td class="num">4.30</td><td class="num">R4,630.00</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>T1 R25–30k @3900–4100</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>—</td>
-<td><span class="chip build">Build</span></td>
-<td>B T1 R25–30k @3900–4100; T2 R25–30k @3700–3900; T3 rest only on daily close &gt;4400 after T1/T2 filled</td>
+<td>CPI</td><td class="num">R19,909</td><td class="num">4.30</td><td class="num">4,630</td><td class="num">4,275.78 <span class="g">+1.10%</span></td><td class="num">R18,386 <span class="mu">2.6%</span></td><td class="num r">−7.6%</td>
+<td class="wrapcell">T1 25–30k @3900–4100; T2 25–30k @3700–3900; T3 rest only on daily close &gt;4400 after T1/T2</td>
+<td><div class="pill"><span class="mk" style="left:32%"></span></div></td>
+<td class="wrapcell">No trim. Cap 15% far above.</td>
+<td><span class="st b">Build</span></td>
+<td class="wrapcell">Waiting. Close 4,276 is above T1 zone. Do not chase. Ex-div 21 Oct 2026 (stockanalysis).</td>
 </tr>
 <tr>
-<td>HAR</td><td class="num">R119,140</td><td class="num">370</td><td class="num">R322.00</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>R15–20k @245–260</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>Trim-to-cap only (if &gt;15% cap)</td>
-<td><span class="chip hold">Hold</span></td>
-<td>B R15–20k @245–260; trim-to-cap only</td>
+<td>HAR</td><td class="num">R119,140</td><td class="num">370</td><td class="num">322</td><td class="num">281.39 <span class="r">−1.68%</span></td><td class="num">R104,114 <span class="mu">14.5%</span></td><td class="num r">−12.6%</td>
+<td class="wrapcell">B 15–20k @245–260 only</td>
+<td><div class="pill"><span class="mk" style="left:40%"></span></div></td>
+<td class="wrapcell">Trim-to-cap only (not breached)</td>
+<td><span class="st h">Hold</span></td>
+<td class="wrapcell">Waiting. Close 281 is above add zone. No add.</td>
 </tr>
 <tr>
-<td>NEWSLV</td><td class="num">R20,428</td><td class="num">1,549.9604</td><td class="num">R13.18</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>— (no adds)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>—</td>
-<td><span class="chip hold">Hold</span></td>
-<td>No adds</td>
+<td>NEWSLV</td><td class="num">R20,428</td><td class="num">1,549.9604</td><td class="num">13.18</td><td class="num">9.63 <span class="mu">5 Oct</span></td><td class="num">R14,926 <span class="mu">2.1%</span></td><td class="num r">−26.9%</td>
+<td class="wrapcell">No adds</td>
+<td><div class="pill"><span class="mk" style="left:50%"></span></div></td>
+<td class="wrapcell">No trim (on 2% target)</td>
+<td><span class="st h">Hold</span></td>
+<td class="wrapcell">Hold. Price date-stamped: last confirmed close 5 Oct R9.63 (Investing.com). JSE instrument page last print 30 Sep R9.36.</td>
 </tr>
 <tr>
-<td>PAN</td><td class="num">R19,872</td><td class="num">690</td><td class="num">R28.80</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>R10–12k @23.50–24.50</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>—</td>
-<td><span class="chip build">Build</span></td>
-<td>B R10–12k @23.50–24.50; limit only, no chase</td>
+<td>PAN</td><td class="num">R19,872</td><td class="num">690</td><td class="num">28.80</td><td class="num">26.20 <span class="r">−0.91%</span></td><td class="num">R18,078 <span class="mu">2.5%</span></td><td class="num r">−9.0%</td>
+<td class="wrapcell">B 10–12k @23.50–24.50</td>
+<td><div class="pill"><span class="mk" style="left:36%"></span></div></td>
+<td class="wrapcell">No trim</td>
+<td><span class="st b">Build</span></td>
+<td class="wrapcell">Waiting. Close 26.20 above add zone. Final div LDT 1 Dec 2026 (declared 16 Sep).</td>
+</tr>
+<tr class="lr">
+<td>PIK</td><td class="num">R50,008</td><td class="num">1,997.11</td><td class="num">25.04</td><td class="num">19.44 <span class="g">+0.10%</span></td><td class="num">R38,824 <span class="mu">5.4%</span></td><td class="num r">−22.4%</td>
+<td class="wrapcell">No adds</td>
+<td><div class="pill"><span class="mk" style="left:72%"></span></div></td>
+<td class="wrapcell">T1 done 2 Oct. T2 50% @≥22.00 (~R19k) or full exit on deterioration</td>
+<td><span class="st e">Exit</span></td>
+<td class="wrapcell">T2 not live (19.44 &lt; 22). No re-apply of T1. BE user-verified.</td>
 </tr>
 <tr>
-<td>PIK</td><td class="num">R50,008</td><td class="num">1,997.11</td><td class="num">R25.04</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>— (no adds)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>T2 50% @≥22.00 (≈998.6 sh ≈R22k @limit); or full exit on deterioration</td>
-<td><span class="chip exit">Exit</span></td>
-<td>T1 done 2 Oct — never re-apply; T2 50% @≥22.00; no adds; BE user-verified</td>
+<td>PRX</td><td class="num">R249,000</td><td class="num">249</td><td class="num">1,000</td><td class="num">659.95 <span class="r">−0.41%</span></td><td class="num">R164,328 <span class="mu">22.8%</span></td><td class="num r">−34.0%</td>
+<td class="wrapcell">Re-add only 550–580 toward target. Never add NPN while PRX held</td>
+<td><div class="pill"><span class="mk" style="left:79%"></span></div></td>
+<td class="wrapcell">S T1 50% of gap ≥660 (~R28k); T2 50% of gap ≥700</td>
+<td><span class="st t">Trim</span></td>
+<td class="wrapcell">Cap breach 22.8% vs 15%. T1 not live: close 659.95 is 5c under 660. Do not chase. Resting limit only if tagged ≥660.</td>
 </tr>
 <tr>
-<td>PRX</td><td class="num">R249,000</td><td class="num">249</td><td class="num">R1,000.00</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>Re-add 550–580 toward target (post-trim only)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>S T1 50% of gap ≥660; T2 50% of gap ≥700 — gap n/a, needs close</td>
-<td><span class="chip trim">Trim</span></td>
-<td>S T1 50% of gap ≥660; T2 ≥700; re-add 550–580 toward target only; never add NPN while PRX held</td>
+<td>PPE</td><td class="num">R248,573</td><td class="num">110,970</td><td class="num">2.24</td><td class="num">1.68 <span class="r">−5.62%</span></td><td class="num">R186,430 <span class="mu">25.9%</span></td><td class="num r">−25.0%</td>
+<td class="wrapcell">No adds</td>
+<td><div class="pill"><span class="mk" style="left:64%"></span></div></td>
+<td class="wrapcell">S T1 50% of gap @1.80–1.90 (~R46k); T2 25% ≥2.20; T3 25% ≥2.80</td>
+<td><span class="st t">Trim</span></td>
+<td class="wrapcell">Largest holding and cap breach. T1 not live (1.68 below 1.80–1.90). No adds. Drift noted; do not edit DATA.</td>
 </tr>
 <tr>
-<td>PPE</td><td class="num">R248,573</td><td class="num">110,970</td><td class="num">R2.24</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>— (no adds)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>S T1 50% of gap @1.80–1.90; T2 25% ≥2.20; T3 25% ≥2.80 — gap n/a, needs close</td>
-<td><span class="chip trim">Trim</span></td>
-<td>S T1 50% of gap @1.80–1.90; T2 25% ≥2.20; T3 25% ≥2.80; no adds</td>
+<td>SSW</td><td class="num">R119,998</td><td class="num">1,850.1089</td><td class="num">64.86</td><td class="num">41.15 <span class="r">−0.60%</span></td><td class="num">R76,127 <span class="mu">10.6%</span></td><td class="num r">−36.6%</td>
+<td class="wrapcell">No adds</td>
+<td><div class="pill"><span class="mk" style="left:60%"></span></div></td>
+<td class="wrapcell">T1 done 2 Oct. T2 50% of gap @≥45–48 (~R6k)</td>
+<td><span class="st t">Trim</span></td>
+<td class="wrapcell">T2 not live (41.15 &lt; 45). No re-apply of T1. BE user-verified.</td>
+</tr>
+<tr class="lr">
+<td>WHL</td><td class="num">R39,758</td><td class="num">833.51</td><td class="num">47.70</td><td class="num">36.81 <span class="g">+1.83%</span></td><td class="num">R30,682 <span class="mu">4.3%</span></td><td class="num r">−22.8%</td>
+<td class="wrapcell">No adds</td>
+<td><div class="pill"><span class="mk" style="left:82%"></span></div></td>
+<td class="wrapcell">S T1 50% ≥36.50 (~R15k) — place resting limit now; T2 50% ≥42.00</td>
+<td><span class="st e">Exit</span></td>
+<td class="wrapcell">T1 live at close. Place limit ≥36.50 for ~417 shares / ~R15k. Do not market-chase.</td>
 </tr>
 <tr>
-<td>SSW</td><td class="num">R119,998</td><td class="num">1,850.1089</td><td class="num">R64.86</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>— (no adds)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>T2 50% of gap @≥45–48 — gap n/a, needs close</td>
-<td><span class="chip trim">Trim</span></td>
-<td>T1 done 2 Oct — never re-apply; T2 50% of gap @≥45–48; no adds; BE user-verified</td>
-</tr>
-<tr>
-<td>WHL</td><td class="num">R39,758</td><td class="num">833.51</td><td class="num">R47.70</td>
-<td class="num"><span class="muted">n/a · d—</span></td><td class="num"><span class="muted">n/a · w—</span></td><td class="num muted">n/a</td>
-<td>— (no adds)</td>
-<td><div class="pillbar"><span class="marker na" title="close unverified — marker unset"></span></div><div class="pillnote">close n/a</div></td>
-<td>T1 50% ≥36.50 (≈416.8 sh ≈R15k @limit) — place resting limit now; T2 50% ≥42.00</td>
-<td><span class="chip exit">Exit</span></td>
-<td>T1 resting sell limit ≥36.50 — place now; T2 50% ≥42.00; no adds</td>
-</tr>
-<tr class="total">
-<td>TOTAL</td><td class="num">R886,686</td><td class="num">—</td><td class="num">—</td>
-<td class="num muted">—</td><td class="num muted">n/a (mkt)</td><td class="num muted">n/a</td>
-<td>—</td><td>—</td><td>—</td><td>—</td>
-<td class="muted">cash R67,537 · total at cost R954,223</td>
+<td>TOTAL</td><td class="num">R886,686</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">R651,894</td><td class="num r">−26.5%</td>
+<td class="wrapcell">Cash R67,537</td>
+<td></td>
+<td class="wrapcell">Equities + cash R719,431</td>
+<td></td>
+<td class="wrapcell">Cash 9.4% — below 10% floor. Sells before buys.</td>
 </tr>
 </tbody>
 </table>
-<p class="fineprint">Invested = Sh×Avg (DATA truth). Value/P/L/Wt% require verified closes — suppressed per Rule 2; row tints and pill markers activate once closes are supplied.</p>
-</div>
 
-<div class="card">
-<h2>T2 · Order Plan <span class="muted">— sells then buys, T1 first · done tranches excluded (SSW T1, PIK T1 — 2 Oct, never re-apply)</span></h2>
+<h2>T2 Order Plan</h2>
+<p class="sub">Sells then buys. T1 first. Done tranches excluded. Bold = placeable today. Day cap R75k. Limits only.</p>
 <table>
-<thead><tr>
-<th>Share</th><th>B/S</th><th>Tranche</th><th>Limit zone R</th><th>Amount R</th><th>Trigger</th><th>Status</th>
-</tr></thead>
+<thead><tr><th>Share</th><th>B/S</th><th>Tranche</th><th>Limit zone R</th><th>Amount R</th><th>Trigger</th><th>Status</th></tr></thead>
 <tbody>
-<tr class="boldrow">
-<td>WHL</td><td class="r">S</td><td>T1 — 50% (≈416.8 sh)</td><td class="num">≥36.50</td><td class="num">≈R15k @limit</td>
-<td>Resting sell limit — place now; fills at ≥36.50 regardless of current close</td>
-<td><span class="chip build">Next — place today</span></td>
-</tr>
-<tr class="boldrow">
-<td>PIK</td><td class="r">S</td><td>T2 — 50% (≈998.6 sh)</td><td class="num">≥22.00</td><td class="num">≈R22k @limit</td>
-<td>Resting sell limit ≥22.00; alternative: full exit on deterioration</td>
-<td><span class="chip build">Next — place today</span></td>
-</tr>
-<tr>
-<td>PPE</td><td class="r">S</td><td>T1 — 50% of gap</td><td class="num">1.80–1.90</td><td class="num muted">gap n/a — needs close</td>
-<td>Close in 1.80–1.90; size = 50% of (value − target value)</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
-<tr>
-<td>PRX</td><td class="r">S</td><td>T1 — 50% of gap</td><td class="num">≥660</td><td class="num muted">gap n/a — needs close</td>
-<td>Close ≥660</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
-<tr>
-<td>SSW</td><td class="r">S</td><td>T2 — 50% of gap</td><td class="num">≥45–48</td><td class="num muted">gap n/a — needs close</td>
-<td>Close ≥45–48</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
-<tr>
-<td>WHL</td><td class="r">S</td><td>T2 — 50% (≈416.8 sh)</td><td class="num">≥42.00</td><td class="num">≈R18k @limit</td>
-<td>After T1 fills</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
-<tr>
-<td>CPI</td><td class="g">B</td><td>T1</td><td class="num">3900–4100</td><td class="num">R25–30k</td>
-<td>Limit in zone; floor check unresolved (T3) — adds only from cash above floor</td>
-<td><span class="chip watch">Standby</span></td>
-</tr>
-<tr>
-<td>DSY</td><td class="g">B</td><td>Rotation T1 — 12% target</td><td class="num">220–235</td><td class="num">R40k</td>
-<td>Limit in zone; no chase; gated by floor check + verified price</td>
-<td><span class="chip watch">Standby</span></td>
-</tr>
-<tr>
-<td>PAN</td><td class="g">B</td><td>Add</td><td class="num">23.50–24.50</td><td class="num">R10–12k</td>
-<td>Limit in zone; floor check unresolved</td>
-<td><span class="chip watch">Standby</span></td>
-</tr>
-<tr>
-<td>HAR</td><td class="g">B</td><td>Add</td><td class="num">245–260</td><td class="num">R15–20k</td>
-<td>Limit in zone; trim-to-cap only otherwise; floor check unresolved</td>
-<td><span class="chip watch">Standby</span></td>
-</tr>
-<tr>
-<td>PRX</td><td class="g">B</td><td>Re-add toward target</td><td class="num">550–580</td><td class="num muted">toward target — n/a</td>
-<td>Only after trims; never add NPN while PRX held</td>
-<td><span class="chip watch">Standby</span></td>
-</tr>
-<tr>
-<td>DSY</td><td class="g">B</td><td>Rotation T2</td><td class="num">200–215</td><td class="num">R30k</td>
-<td>After T1 fills</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
-<tr>
-<td>DSY</td><td class="g">B</td><td>Rotation T3 — rest</td><td class="num muted">—</td><td class="num muted">rest</td>
-<td>Daily close &gt;260</td>
-<td><span class="chip hold">Waiting</span></td>
-</tr>
+<tr><td>WHL</td><td>S</td><td><b>T1 50%</b></td><td class="num"><b>≥36.50</b></td><td class="num"><b>15,000</b></td><td class="wrapcell"><b>Close 36.81 already ≥36.50. Resting limit now.</b></td><td><b>Next</b></td></tr>
+<tr><td>PRX</td><td>S</td><td>T1 50% of gap</td><td class="num">≥660</td><td class="num">28,000</td><td class="wrapcell">Close 659.95 is 5c short. Tag only if ≥660.</td><td>Waiting</td></tr>
+<tr><td>PRX</td><td>S</td><td>T2 50% of gap</td><td class="num">≥700</td><td class="num">28,000</td><td class="wrapcell">After T1. Close well below.</td><td>Standby</td></tr>
+<tr><td>PPE</td><td>S</td><td>T1 50% of gap</td><td class="num">1.80–1.90</td><td class="num">46,000</td><td class="wrapcell">Close 1.68 below zone. No chase.</td><td>Waiting</td></tr>
+<tr><td>PPE</td><td>S</td><td>T2 25% of gap</td><td class="num">≥2.20</td><td class="num">23,000</td><td class="wrapcell">After T1.</td><td>Standby</td></tr>
+<tr><td>PPE</td><td>S</td><td>T3 25% of gap</td><td class="num">≥2.80</td><td class="num">23,000</td><td class="wrapcell">After T2.</td><td>Standby</td></tr>
+<tr><td>SSW</td><td>S</td><td>T2 50% of gap</td><td class="num">≥45–48</td><td class="num">6,000</td><td class="wrapcell">T1 done 2 Oct. Close 41.15.</td><td>Waiting</td></tr>
+<tr><td>PIK</td><td>S</td><td>T2 50%</td><td class="num">≥22.00</td><td class="num">19,000</td><td class="wrapcell">T1 done 2 Oct. Close 19.44. Full exit if deterioration.</td><td>Waiting</td></tr>
+<tr><td>WHL</td><td>S</td><td>T2 50%</td><td class="num">≥42.00</td><td class="num">15,000</td><td class="wrapcell">After T1. Close 36.81.</td><td>Standby</td></tr>
+<tr><td>CPI</td><td>B</td><td>T1</td><td class="num">3900–4100</td><td class="num">25,000–30,000</td><td class="wrapcell">Blocked: cash below floor and price above zone. Sells first.</td><td>Waiting</td></tr>
+<tr><td>CPI</td><td>B</td><td>T2</td><td class="num">3700–3900</td><td class="num">25,000–30,000</td><td class="wrapcell">After T1.</td><td>Standby</td></tr>
+<tr><td>CPI</td><td>B</td><td>T3</td><td class="num">close &gt;4400</td><td class="num">rest to target</td><td class="wrapcell">Only after T1/T2 filled.</td><td>Standby</td></tr>
+<tr><td>HAR</td><td>B</td><td>Add</td><td class="num">245–260</td><td class="num">15,000–20,000</td><td class="wrapcell">Close 281. Floor blocks.</td><td>Waiting</td></tr>
+<tr><td>PAN</td><td>B</td><td>Add</td><td class="num">23.50–24.50</td><td class="num">10,000–12,000</td><td class="wrapcell">Close 26.20. Floor blocks.</td><td>Waiting</td></tr>
+<tr><td>PRX</td><td>B</td><td>Re-add</td><td class="num">550–580</td><td class="num">toward 15%</td><td class="wrapcell">Only after trims, toward target. Not now.</td><td>Standby</td></tr>
 </tbody>
 </table>
-<p class="fineprint"><b>Bold = placeable today (2):</b> WHL T1 + PIK T2 resting sell limits, ≈R37k combined — within ≤R75k/day cap; sells precede buys. All buys Standby: cash-floor check unresolved (cost-basis ≈7.1% vs ≥10% floor) and prices unverified — floor blocks buys only. Limit orders only; never chase.</p>
-</div>
 
-<div class="card">
-<h2>T3 · Risk &amp; Caps <span class="muted">— cost-basis proxy; official Wt% needs verified closes</span></h2>
+<h2>T3 Risk</h2>
 <table>
 <thead><tr><th>Metric</th><th>Current</th><th>Cap</th><th>State</th></tr></thead>
 <tbody>
-<tr>
-<td>Cash %</td><td>n/a — cost-basis ≈7.1%</td><td class="num">≥10% floor</td>
-<td class="a">Watch — likely below floor at cost; buys blocked until verified</td>
-</tr>
-<tr>
-<td>Largest single equity %</td><td>n/a — cost-basis PRX ≈26.1%, PPE ≈26.1%</td><td class="num">≤15%</td>
-<td class="muted">n/a — needs verified closes; drift breach → trim-to-cap tranche</td>
-</tr>
-<tr>
-<td>CPI + DSY</td><td>≈2.1% cost (DSY 0% held)</td><td class="num">≤30%</td>
-<td class="g">OK (cost-basis)</td>
-</tr>
-<tr>
-<td>Metals complex (HAR + SSW + PAN)</td><td>≈27.1% cost</td><td class="num">—</td>
-<td class="muted">n/a — no verified gold/PGM prices this run</td>
-</tr>
-<tr>
-<td>HAR + SSW + PAN + NEWSLV</td><td>≈29.3% cost</td><td class="num">≤30%</td>
-<td class="a">Watch — within ~1pt of cap at cost; confirm at close</td>
-</tr>
-<tr>
-<td>PPE + NEWSLV</td><td>≈28.2% cost</td><td class="num">≤15%</td>
-<td class="a">Watch — cost-basis far above cap; verify at close before tagging breach (report only — never resolved by editing DATA)</td>
-</tr>
-<tr>
-<td>Top-3 (PRX + PPE + SSW)</td><td>≈64.7% cost</td><td class="num">monitor</td>
-<td class="muted">n/a — needs verified closes</td>
-</tr>
+<tr><td>Cash %</td><td class="num">9.4% (R67,537)</td><td class="num">≥10% (R71,943)</td><td class="br">Breach</td></tr>
+<tr><td>Largest equity (PPE)</td><td class="num">25.9%</td><td class="num">≤15%</td><td class="br">Breach</td></tr>
+<tr><td>CPI+DSY</td><td class="num">2.6% + 0</td><td class="num">≤30%</td><td class="ok">OK</td></tr>
+<tr><td>Metals HAR+SSW+PAN+NEWSLV</td><td class="num">29.6%</td><td class="num">≤30%</td><td class="wa">Watch</td></tr>
+<tr><td>PPE+NEWSLV</td><td class="num">28.0%</td><td class="num">≤15%</td><td class="br">Breach</td></tr>
+<tr><td>Top-3 (PPE, PRX, HAR)</td><td class="num">63.2%</td><td class="num">report</td><td class="wa">Watch</td></tr>
+<tr><td>PRX single</td><td class="num">22.8%</td><td class="num">≤15%</td><td class="br">Breach</td></tr>
 </tbody>
 </table>
-<p class="fineprint">Cost-basis % = Invested ÷ (ΣInvested + CASH) — a proxy only, since market values are unverified (PPE, PIK, WHL likely marked below avg). States flip only on verified data; caps are reported, never resolved by editing DATA.</p>
-</div>
 
-<div class="card">
-<h2>T4 · Watchlist <span class="muted">— all 9</span></h2>
+<h2>T4 Watchlist</h2>
 <table>
-<thead><tr>
-<th>Share</th><th>Price</th><th>Zone?</th><th>Buy R</th><th>Exit</th><th>Role</th><th>Status</th><th>Action</th>
-</tr></thead>
+<thead><tr><th>Share</th><th>Price</th><th>Zone?</th><th>Buy R</th><th>Exit</th><th>Role</th><th>Status</th><th>Action</th></tr></thead>
 <tbody>
-<tr>
-<td>TGA</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">95–105</td><td class="num">140–150</td>
-<td>Watch</td><td><span class="chip watch">Watch</span></td>
-<td>Limit only in buy zone; no chase</td>
-</tr>
-<tr>
-<td>NPN</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num muted">—</td><td class="num muted">—</td>
-<td>Watch-only — same underlying as PRX</td><td><span class="chip hold">Watch-only (PRX held)</span></td>
-<td>NO entry while PRX held</td>
-</tr>
-<tr>
-<td>SOL</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num muted">—</td><td class="num muted">—</td>
-<td>Do not chase</td><td><span class="chip watch">No-chase</span></td>
-<td>No entry without defined zone; never chase</td>
-</tr>
-<tr class="hl">
-<td>DSY</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">220–235 (T1 R40k)</td><td class="num">300+</td>
-<td>ROTATION BUY — 12% target</td><td><span class="chip build">Rotation buy — standby</span></td>
-<td>T1 R40k @220–235 once floor + price verified; T2 R30k @200–215; T3 rest on close &gt;260</td>
-</tr>
-<tr>
-<td>CFR</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">3000–3200</td><td class="num">4000+</td>
-<td>Watch</td><td><span class="chip watch">Watch</span></td>
-<td>Limit only; no chase</td>
-</tr>
-<tr>
-<td>CLH</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">4.00–4.30</td><td class="num">5.20–5.50</td>
-<td>Watch</td><td><span class="chip watch">Watch</span></td>
-<td>Limit only; no chase</td>
-</tr>
-<tr>
-<td>WBC</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">24–26.50</td><td class="num">34–36</td>
-<td>Watch</td><td><span class="chip watch">Watch</span></td>
-<td>Limit only; no chase</td>
-</tr>
-<tr>
-<td>BOX</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num">68–74</td><td class="num">95–100</td>
-<td>Watch</td><td><span class="chip watch">Watch</span></td>
-<td>Limit only; no chase</td>
-</tr>
-<tr>
-<td>ACL</td><td class="num muted">n/a*</td><td class="num muted">n/a*</td><td class="num muted">—</td><td class="num muted">—</td>
-<td>Avoid</td><td><span class="chip exit">Avoid</span></td>
-<td>No action — avoid</td>
-</tr>
+<tr><td>TGA</td><td class="num">122.77 <span class="r">−2.56%</span> <span class="mu">17:05 print</span></td><td>N</td><td class="num">95–105</td><td class="num">140–150</td><td>watch</td><td><span class="st w">Watch</span></td><td class="wrapcell">Above zone. No buy. kwayisi still on 5 Oct close 126.00; sashares 6 Oct 17:05 R122.77.</td></tr>
+<tr><td>NPN</td><td class="num">707.87 <span class="g">+0.26%</span></td><td>N</td><td class="num">—</td><td class="num">—</td><td>watch-only (PRX held)</td><td><span class="st w">Watch</span></td><td class="wrapcell">watch-only (PRX held). No entry.</td></tr>
+<tr><td>SOL</td><td class="num">235.99 <span class="g">+1.28%</span></td><td>N</td><td class="num">do not chase</td><td class="num">—</td><td>do not chase</td><td><span class="st w">Watch</span></td><td class="wrapcell">Do not chase. YTD +122% on kwayisi.</td></tr>
+<tr><td>DSY</td><td class="num">264.06 <span class="g">+0.71%</span></td><td>N</td><td class="num">T1 40k @220–235; T2 30k @200–215</td><td class="num">300+</td><td>ROTATION BUY 12%</td><td><span class="st w">Watch</span></td><td class="wrapcell">Above buy zone. Close &gt;260 meets T3 price only; T1/T2 not filled — do not buy the break. Cash floor also blocks.</td></tr>
+<tr><td>CFR</td><td class="num">3,479.00 <span class="r">−0.97%</span></td><td>N</td><td class="num">3000–3200</td><td class="num">4000+</td><td>watch</td><td><span class="st w">Watch</span></td><td class="wrapcell">Above zone. No buy.</td></tr>
+<tr><td>CLH</td><td class="num">4.34 <span class="r">−0.23%</span></td><td>Near</td><td class="num">4.00–4.30</td><td class="num">5.20–5.50</td><td>watch</td><td><span class="st w">Watch</span></td><td class="wrapcell">4c above zone. Not a buy. Floor blocks.</td></tr>
+<tr class="hl"><td>WBC</td><td class="num">26.09 <span class="g">+2.15%</span></td><td>Y</td><td class="num">24–26.50</td><td class="num">34–36</td><td>watch</td><td><span class="st w">Watch</span></td><td class="wrapcell">In zone, top end. Not a funded rotation. Cash floor blocks any add. Limit only if floor cleared — do not chase.</td></tr>
+<tr><td>BOX</td><td class="num">80.30 <span class="g">+0.37%</span></td><td>N</td><td class="num">68–74</td><td class="num">95–100</td><td>watch</td><td><span class="st w">Watch</span></td><td class="wrapcell">Above zone. No buy.</td></tr>
+<tr><td>ACL</td><td class="num">1.21 <span class="r">−0.82%</span></td><td>N</td><td class="num">—</td><td class="num">—</td><td>avoid</td><td><span class="st e">Exit</span></td><td class="wrapcell">Avoid. No entry.</td></tr>
 </tbody>
 </table>
-<p class="fineprint">*Zone? classification (Y/N/Near) and Price need a verified close. Highlighted row = genuine buy (DSY rotation); all entries limit-only, never chase.</p>
-</div>
 
-<div class="card">
-<h2>Notes <span class="muted">— 24–48h fact + TA snapshot per holding + DSY · research feed unavailable this run → no news invented, TA n/a per Rules 2–3</span></h2>
-<div class="notes">
-
-<div class="note"><h3>CPI <span class="chip build">Build</span></h3>
-<p><span class="lbl">Posn:</span> 4.30 sh @ R4,630.00 · Inv R19,909 · target 15%</p>
-<p><span class="lbl">Plan:</span> T1 B R25–30k @3900–4100 → T2 R25–30k @3700–3900 → T3 rest only on daily close &gt;4400 after T1/T2 filled.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>HAR <span class="chip hold">Hold</span></h3>
-<p><span class="lbl">Posn:</span> 370 sh @ R322.00 · Inv R119,140 · target 15%</p>
-<p><span class="lbl">Plan:</span> B R15–20k @245–260; trim-to-cap only. Gold miner — part of metals-complex row in T3.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>NEWSLV <span class="chip hold">Hold</span></h3>
-<p><span class="lbl">Posn:</span> 1,549.9604 sh @ R13.18 · Inv R20,428 · target 2%</p>
-<p><span class="lbl">Plan:</span> No adds. Relevant caps: HAR+SSW+PAN+NEWSLV ≤30%; PPE+NEWSLV ≤15% (T3).</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>PAN <span class="chip build">Build</span></h3>
-<p><span class="lbl">Posn:</span> 690 sh @ R28.80 · Inv R19,872 · target 4%</p>
-<p><span class="lbl">Plan:</span> B R10–12k @23.50–24.50, limit only. Part of metals-complex row in T3.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>PIK <span class="chip exit">Exit</span></h3>
-<p><span class="lbl">Posn:</span> 1,997.11 sh @ R25.04 (BE user-verified) · Inv R50,008 · target 0%</p>
-<p><span class="lbl">Plan:</span> T1 done 2 Oct — never re-apply. T2 50% (≈998.6 sh) @≥22.00 as resting limit, or full exit on deterioration; no adds.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>PRX <span class="chip trim">Trim</span></h3>
-<p><span class="lbl">Posn:</span> 249 sh @ R1,000.00 · Inv R249,000 · target 15%</p>
-<p><span class="lbl">Plan:</span> S T1 50% of gap ≥660; T2 50% of gap ≥700; re-add 550–580 toward target only. Sole Naspers/Prosus exposure — never add NPN while PRX held (NPN watch-only in T4).</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>PPE <span class="chip trim">Trim</span></h3>
-<p><span class="lbl">Posn:</span> 110,970 sh @ R2.24 · Inv R248,573 · target 13%</p>
-<p><span class="lbl">Plan:</span> S T1 50% of gap @1.80–1.90; T2 25% ≥2.20; T3 25% ≥2.80; no adds. PPE+NEWSLV ≤15% cap flagged in T3 (cost-basis).</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>SSW <span class="chip trim">Trim</span></h3>
-<p><span class="lbl">Posn:</span> 1,850.1089 sh @ R64.86 (BE user-verified) · Inv R119,998 · target 9%</p>
-<p><span class="lbl">Plan:</span> T1 done 2 Oct — never re-apply. T2 50% of gap @≥45–48; no adds. Metals complex (gold/PGM) tracked in T3.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>WHL <span class="chip exit">Exit</span></h3>
-<p><span class="lbl">Posn:</span> 833.51 sh @ R47.70 · Inv R39,758 · target 0%</p>
-<p><span class="lbl">Plan:</span> T1 50% (≈416.8 sh) ≥36.50 — place resting limit now; T2 50% ≥42.00 after T1; no adds.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-<div class="note"><h3>DSY <span class="chip build">Rotation buy</span></h3>
-<p><span class="lbl">Posn:</span> none held · target 12% (rotation buy)</p>
-<p><span class="lbl">Plan:</span> T1 R40k @220–235 → T2 R30k @200–215 → T3 rest on close &gt;260; exit zone 300+. Limit orders only — do not chase. Gated by cash-floor check (T3) + verified price.</p>
-<p><span class="lbl">News (24–48h):</span> No fresh 24–48h news.</p>
-<p><span class="lbl">TA:</span> n/a.</p></div>
-
-</div>
+<h2>Notes</h2>
+<div class="grid">
+<div class="card"><h3>CPI</h3><p>6 Oct close R4,275.78 (+1.10%). Stockanalysis lists ex-div 21 Oct 2026, DPS R84.70. No fresh broker change in 24–48h. TA: 52w R3,464–R4,912 (stockanalysis, 6 Oct). 50/200-DMA and RSI14 n/a.</p></div>
+<div class="card"><h3>HAR</h3><p>6 Oct close R281.39 (−1.68%). Gold USD 4,163 (+0.59% on 6 Oct print). No HAR-specific SENS in window. TA n/a.</p></div>
+<div class="card"><h3>NEWSLV</h3><p>Last confirmed close R9.63 on 5 Oct (Investing.com, quoted 963 cents). JSE instrument page stale at 30 Sep R9.36. No fresh 24–48h news. TA n/a.</p></div>
+<div class="card"><h3>PAN</h3><p>6 Oct close R26.20 (−0.91%). Final dividend LDT 1 Dec 2026 already declared 16 Sep. No new SENS in window. TA n/a.</p></div>
+<div class="card"><h3>PIK</h3><p>6 Oct close R19.44 (+0.10%). Still well under T2 R22. No fresh 24–48h results/SENS. TA n/a.</p></div>
+<div class="card"><h3>PRX</h3><p>6 Oct close R659.95 (−0.41%). SENS 6 Oct: repurchase update — 2,239,784 Prosus shares 28 Sep–2 Oct at avg €35.6461, €79.8m. Sole Naspers/Prosus line. TA: sashares range R645.61–R682.84 (6 Oct; treat as quoted range, not confirmed 52w). DMA/RSI n/a.</p></div>
+<div class="card"><h3>PPE</h3><p>6 Oct close R1.68 (−5.62%), day low R1.67. No fresh 24–48h SENS. Trim zone not reached. TA n/a.</p></div>
+<div class="card"><h3>SSW</h3><p>6 Oct close R41.15 (−0.60%). Precious-metals index −0.95% on 6 Oct. Platinum USD 1,714 (−0.37%). No new SENS. TA n/a.</p></div>
+<div class="card"><h3>WHL</h3><p>6 Oct close R36.81 (+1.83%), high equal to close. T1 ≥36.50 is live. Morningstar 52w R35.84–R61.46 (6 Oct). DMA/RSI n/a.</p></div>
+<div class="card"><h3>DSY</h3><p>6 Oct close R264.06 (+0.71%). Rotation buy only in 220–235 / 200–215. T3 “rest on close &gt;260” does not fire before T1/T2. No fresh 24–48h SENS. TA n/a.</p></div>
 </div>
 
 <div class="foot">
-
-<div class="card">
-<h2>Totals</h2>
-<p><span class="lbl">Cash</span> <b>R67,537</b></p>
-<p><span class="lbl">Equities</span> <b>R886,686</b> <span class="muted">(at cost — market value n/a)</span></p>
-<p><span class="lbl">Total</span> <b>R954,223</b> <span class="muted">(at cost)</span></p>
-<p><span class="lbl">P/L%</span> <b class="muted">n/a</b> <span class="muted">(needs verified closes)</span></p>
+<p><b>Totals.</b> Cash R67,537 · Equities R651,894 · Total R719,431 · P/L −R234,793 (−26.5% on R886,686 invested). NEWSLV valued at 5 Oct R9.63.</p>
+<p><b>Rotation progress.</b> 2 Oct T1s (SSW+PIK) done, about R60k freed. Cash now R67,537 vs floor R71,943 — R4.4k short, so nothing redeployed today. Buys stay blocked until a sell lifts cash through the floor.</p>
+<p><b>Data notes.</b> Closes from afx.kwayisi.org 6 Oct 17:27 prints unless noted. TGA is sashares 6 Oct 17:05 delayed R122.77 (kwayisi page still 5 Oct R126.00). NEWSLV date-stamped. USD/ZAR 6 Oct close 16.5375; 07:00s SAST ~16.58. JSE All Share 108,881 (+0.51%); Financials +1.56%. No pending TXN.</p>
+<p><b>Zone change suggestions.</b> None. PRX is 5c under its T1 tag — leave the ≥660 rule as written. DSY T3 price condition is met but must not override unfilled T1/T2.</p>
+<p><b>Daily summary.</b> PPE −5.6% widened the single-name and PPE+NEWSLV breaches; PRX still 22.8% and 5c shy of the trim tag; metals complex 29.6% (watch). Only executable tranche today is WHL T1 resting limit ≥36.50 for ~R15k. Watchlist triggers: none for funded buys (WBC in zone but floor-blocked and not the rotation name).</p>
 </div>
-
-<div class="card">
-<h2>Rotation Progress</h2>
-<p>2 Oct: SSW T1 + PIK T1 done ≈R60k freed — never re-applied (TXN guard).</p>
-<p>Redeployed: unverifiable this run (no closes; TXN none pending).</p>
-<p>Cash R67,537 vs ≥10% floor: unresolved — cost-basis ≈7.1% implies buys blocked; confirm with closes. DSY T1 R40k earmarked once floor + 220–235 zone confirm.</p>
-</div>
-
-<div class="card">
-<h2>Data Notes</h2>
-<ul>
-<li>No verified JSE close available this run — per Rule 2 no prices invented: Price/Value/P/L/Wt%/day% shown n/a; row tints and pill markers inactive; gap-based tranche amounts (PRX, PPE, SSW) unsized.</li>
-<li>DATA Shares/Avg/CASH are truth; BE-verified avgs (PIK, SSW) used as-is; dividends not reinvested — counts never adjusted.</li>
-<li>Invested = Sh×Avg; equities shown at cost — cost basis is not the official Wt% (Rule 1).</li>
-<li>TXN: none pending; SSW T1 + PIK T1 (done 2 Oct) permanently excluded from T2.</li>
-<li>Research feed unavailable — all holdings: "No fresh 24–48h news"; TA n/a (never estimated).</li>
-<li>Supply verified closes (ticker | close | day%) to reactivate all computed fields; TA needs sourced 50/200-DMA, RSI14, 52w hi-lo else stays n/a.</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Zone Change Suggestions</h2>
-<p>None — Rule 4: no verified closes or TA this run, so no zone changes are justified.</p>
-</div>
-
-<div class="card">
-<h2>Daily Summary</h2>
-<p>No verified closes → no computed day moves, cap verdicts, or watchlist triggers — none flagged.</p>
-<p>Executable today (bold in T2): WHL T1 resting sell ≥36.50 (≈416.8 sh ≈R15k @limit) + PIK T2 resting sell ≥22.00 (≈998.6 sh ≈R22k @limit) — ≈R37k combined, within the ≤R75k/day cap; sells precede buys.</p>
-<p>All buys Standby pending floor verification + verified prices: CPI T1 R25–30k @3900–4100; HAR R15–20k @245–260; PAN R10–12k @23.50–24.50; PRX re-add 550–580 (post-trim only); DSY rotation T1 R40k @220–235.</p>
-</div>
-
-</div>
-
 </div>
 </body>
 </html>
